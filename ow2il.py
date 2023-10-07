@@ -18,6 +18,8 @@ import pytesseract
 from PIL import Image
 import psutil
 
+pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 # Screen resolution (1920x1080)
 screen_width = 1920
 screen_height = 1080
@@ -35,7 +37,7 @@ moira_y = y + height * 0.2  # Y-coordinate of Moira's slot center
 # Function to check if Overwatch 2 is running
 def is_overwatch_running():
     for process in psutil.process_iter(attrs=['name']):
-        if process.info['name'] == 'Overwatch2.exe':
+        if process.info['name'] == 'Overwatch.exe':
             return True
     return False
 
